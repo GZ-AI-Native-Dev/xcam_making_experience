@@ -129,7 +129,7 @@ generated/
 
 每个角色交接必须交付五件：首帧三件套（图+提示词+LoRA/模型）、各状态中英文提示词、每动作 1-3 候选视频、人工筛选记录（合格+坏例原因）、上线资料（角色名/年龄/职业/描述/选中视频地址）。
 
-完整表格与检查方法见 `03_video/qc_delivery.md`；上线资料字段可参照角色预览站（`demo.xshow.live/interactive`）的角色卡片。
+完整表格与检查方法见 `03_video/qc_delivery.md`；上线资料字段可参照角色预览站（`https://xcamshow.xyz/interactive`）的角色卡片。
 
 ## 生成检查
 
