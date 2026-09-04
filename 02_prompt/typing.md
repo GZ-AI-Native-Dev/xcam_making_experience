@@ -102,6 +102,38 @@ non_diegetic_music: N/A
 - 对于手机版，手机必须保持低位，不能靠近脸，不能挡住身体。
 - 动作幅度宁可小一点；走近只允许人物走近，不允许镜头运动。
 
+## 完整示例
+
+以下 2 条均为批量生产验证通过的完整 Typing prompt（杨幂稳定批）。5 秒短版和 8 秒长版各一条，直接照结构替换性格描述即可。
+
+### 示例 1 · 5 秒短版（走近画面外键盘打字声）
+
+> 适合快速等待状态。动作约 3 秒敲键盘，前后用走近和回位填充。
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 5.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Authentic phone livestream realism, a single vertical front-facing static Typing shot. The adult fictional woman in the reference pictures begins in the exact same pose, hand position, expression, subject position, and visible background as Picture 1. Her personality is a poised, bright, teasing AI-girlfriend livestream personality; elegant, self-aware, and camera-fluent. The camera remains completely locked for the full 5 seconds: no push-in, no pull-back, no zoom, no pan, no tilt, no shake, no tracking, no reframing, and no cuts. She briefly glances below the lens, steps forward by herself only one small step, makes small realistic offscreen-keyboard typing motions for about 3 seconds, then looks back and returns. The composition change comes only from her own small body movement, while the camera stays completely fixed. Near the lower edge of the frame, the visible finger motion suggests typing for about 3 seconds, but the keyboard stays fully offscreen. No keyboard, phone, tablet, laptop, monitor, chat window, interface, subtitles, or screen text appears in the frame. Her expression and rhythm follow the character personality: natural, attentive, and like a real livestream host briefly replying to a message, not mechanical and not exaggerated. After typing, she raises her eyes back to the lens and calmly returns to the original position. Her hands, body, gaze, subject size, background, and framing return to the exact same state established by Picture 2, forming a seamless first-last-frame loop. No dialogue, no subtitles, no screen text, no new props, no gift effect.
+
+overall_soundscape: A short, clear, non-harsh keyboard typing sound is heard from the offscreen area below the camera, synchronized only with the brief finger typing motion. No human voice, no music, and no other sound.
+
+non_diegetic_music: N/A
+```
+
+### 示例 2 · 8 秒长版（读消息后敲键盘）
+
+> 适合稍长等待状态。多了一段"看消息→反应"的过程，实际敲键盘段仍只 3-4 秒。
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Authentic phone livestream realism, a single vertical front-facing static Typing shot. The adult fictional woman in the reference pictures begins in the exact same pose, hand position, expression, subject position, and visible background as Picture 1. Her personality is a poised, bright, teasing AI-girlfriend livestream personality; elegant, self-aware, and camera-fluent. The camera remains completely locked for the full 8 seconds: no push-in, no pull-back, no zoom, no pan, no tilt, no shake, no tracking, no reframing, and no cuts. She looks below the lens as if reading a message, shows a personality-matched reaction, makes small offscreen-keyboard typing motions for about 3-4 seconds, then returns to the lens and anchor. The composition change comes only from her own small body movement, while the camera stays completely fixed. Near the lower edge of the frame, the visible finger motion suggests typing for about 3-4 seconds, but the keyboard stays fully offscreen. No keyboard, phone, tablet, laptop, monitor, chat window, interface, subtitles, or screen text appears in the frame. Her expression and rhythm follow the character personality: natural, attentive, and like a real livestream host briefly replying to a message, not mechanical and not exaggerated. After typing, she raises her eyes back to the lens and calmly returns to the original position. Her hands, body, gaze, subject size, background, and framing return to the exact same state established by Picture 2, forming a seamless first-last-frame loop. No dialogue, no subtitles, no screen text, no new props, no gift effect.
+
+overall_soundscape: A short, clear, non-harsh keyboard typing sound is heard from the offscreen area below the camera, synchronized only with the brief finger typing motion. No human voice, no music, and no other sound.
+
+non_diegetic_music: N/A
+```
+
 ## 检查清单
 
 - [ ] 是否是 5 秒或 8 秒 H3 FL2VA，Picture 1 和 Picture 2 同图？
