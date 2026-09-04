@@ -196,7 +196,7 @@ Duration: 8 seconds. First frame and last frame must match the same mode anchor 
 - [ ] 是否已选定性格类型？
 - [ ] 是否只注入 `Idle`、`Gift`、`Action`？
 - [ ] 是否没有引入旧版 Preview、Typing 或多段动作流程？
-- [ ] 是否固定 8 秒、首尾帧一致？
+- [ ] 是否 4-15 秒（默认 8 秒）、首尾帧一致？
 - [ ] 是否保持正面、平视、直视镜头、深景深和真实直播质感？
 - [ ] Idle / Action 是否没有说话、声音、分镜和新增道具？
 - [ ] Gift 如果口播，是否只有一句短中文，且没有字幕或其他人声？

@@ -10,7 +10,7 @@ description: >
 
 # Complex Action Skill（双路线）
 
-> Complex action 是 1-3 分钟的长互动视频，从角色已有的 private_live 锚点首帧出发，视频内脱衣变裸体后进行性行为。
+> Complex action 是 1-3 分钟的长互动视频，从角色已有的 公屏骚版锚点首帧出发，视频内脱衣变裸体后进行性行为。
 > 六大位姿：handjob / blowjob / paizuri / cowgirl / doggystyle / selftouch。
 > **两条路线可选**：
 > - **路线 A**：mulerouter Wan 3.0 **i2v 链式**（分段 + 提取尾帧接下一段）——60-80 秒四段结构的主力。
@@ -32,7 +32,7 @@ description: >
 
 ## 通用规则（两路线都适用）
 
-1. **同首帧**：每条 complex action 的 K1 就是角色已有的 private_live 锚点首帧（穿内衣/比基尼那张），不另出。
+1. **同首帧**：每条 complex action 的 K1 就是角色已有的 公屏骚版锚点首帧（穿内衣/比基尼那张），不另出。
 2. **脱衣先行**：第一段（seg1）是脱衣过渡，从穿衣锚点脱到全裸；第二段起才是性行为。
 3. **关键帧链**：5 个关键帧 K1-K5，相邻段共享端点帧（K2 既是 seg1 尾帧也是 seg2 首帧）。
 4. **关键帧先行**：K1 用已有锚点；K2-K5 用图像模型生成（Flux + NSFW LoRA 本地，或图像 API），过脸一致性验收再跑视频。
@@ -86,7 +86,7 @@ Static shot. [动作起点]. [动作过程]. [动作收尾]. [构图约束].
 
 ## Wan 关键帧工作流
 
-1. K1 直接用角色已有的 private_live 锚点首帧，不重新生成。
+1. K1 直接用角色已有的 公屏骚版锚点首帧，不重新生成。
 2. K2-K5 用图像模型生成（Flux + NSFW LoRA 本地部署，或 mulerouter 图像 API）。
 3. K2 必须是全裸态，与 K1 同脸同发型同场景。
 4. K3 是行为就位帧（裸体 + 体位摆好）。
@@ -222,7 +222,7 @@ spicycam/{角色名}/complex action/{代号}/concat_output/{代号}_final.mp4
 ## 检查清单
 
 - [ ] 是否选对了路线（四段长视频走 A，单段/多图参考走 B）？
-- [ ] K1 是否直接用已有的 private_live 锚点首帧？
+- [ ] K1 是否直接用已有的 公屏骚版锚点首帧？
 - [ ] seg1 是否是脱衣过渡（穿衣 → 全裸）？
 - [ ] 路线 A 是否全部 Wan 3.0 via mulerouter；路线 B 是否用对 H3 模式（回位用 FL2VA，倒推用 L2VA，多图用 Ref2VA）？
 - [ ] 路线 B 是否带首尾帧对齐行、单镜头、总时长匹配？

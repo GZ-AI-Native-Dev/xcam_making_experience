@@ -9,11 +9,11 @@ description: >
 # Typing Skill
 
 > Typing 是 AI 直播女友等待回复时的状态视频。当前稳定版本用于 MiniMax H3 FL2VA 首尾帧视频。
-> Picture 1 和 Picture 2 使用同一张参考图。Typing 使用 5 秒短版或 8 秒长版，避免 10 秒输入动作显得拖沓。
+> Picture 1 和 Picture 2 使用同一张参考图。Typing 使用 4-15 秒（默认 5 或 8 秒），避免 10 秒以上输入动作显得拖沓。
 
 ## 核心规则
 
-1. 每条 Typing 都是一个 5 秒或 8 秒单镜头 FL2VA loop。
+1. 每条 Typing 都是一个 4-15 秒单镜头 FL2VA loop（默认 5 或 8 秒）。
 2. 第一行必须写 H3 首尾帧对齐说明，Picture 1 对齐 0.00 秒，Picture 2 对齐 5.00 秒或 8.00 秒。
 3. 正文必须使用三段结构：`integrated_multimodal_description`、`overall_soundscape`、`non_diegetic_music`。
 4. 镜头必须完全固定：不推近、不拉远、不缩放、不平移、不摇晃、不跟拍、不重新构图、不切镜头。

@@ -1,6 +1,6 @@
 # 六大位姿分镜与 Wan 3.0 段级 prompt
 
-> 每条 complex action 使用角色已有的 private_live 锚点首帧作为 K1（穿内衣/比基尼）。
+> 每条 complex action 使用角色已有的公屏骚版锚点首帧作为 K1（穿内衣/比基尼）。
 > seg1 = 脱衣过渡（穿衣 → 全裸），seg2-seg4 = 性行为。
 > 所有段走 mulerouter Wan 3.0 FLF2V API（首帧图 + 尾帧图 + 自然语言文本）。
 

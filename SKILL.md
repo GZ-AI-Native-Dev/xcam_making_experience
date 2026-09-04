@@ -32,19 +32,19 @@ appendix/     经验笔记（生产实测积累）
 
 | 模式 | 场景定位 | 服装状态 | 互动强度 | 使用状态 |
 | --- | --- | --- | --- | --- |
-| `public_live` | 1v多公屏直播间 | 穿着日常/职业相关服装 | 公开、生活化、职业感 | Idle / Gift / Action / Typing / Preview |
-| `private_live` | 1v1私密直播间 | 不穿衣服或极少遮挡；仅限明确成人虚构角色 | 更私密、沉浸、灯光更柔和 | Idle / Gift / Action / Typing / Preview |
+| `public_live` | 1v多公屏直播间 | 骚版生产层：蕾丝内衣/透丝袜/性感运动装等，吸引男用户 | 公开直播，骚版动作 | Idle / Gift / Action / Typing / Preview |
+| `private_live` | 1v1私密直播间 | 点击 private 直接脱衣切换（未来功能，未上线） | 更私密、沉浸 | 未上线，暂不出素材 |
 
 ## 状态范围
 
-| 状态 | public_live | private_live | 时长 | 首尾要求 |
+| 状态 | public_live（当前唯一活跃模式） | private_live | 时长 | 首尾要求 |
 | --- | --- | --- | --- | --- |
-| `Idle` | 穿衣、职业/生活微动作 | 私密锚点、低幅度姿态和呼吸 | 8 秒 | 首尾一致 |
-| `Gift` | AR虚拟礼物，公开直播反应 | AR虚拟礼物，私密直播反应 | 8 秒 | 特效消散后首尾一致 |
-| `Action` | 公屏可展示的简单动作按钮 | 私密房间简单动作按钮 | 8 秒 | 动作完成后回到锚点 |
-| `Typing` | 等待 AI 回复时的输入状态 | 私密直播间输入/回复状态 | 5 或 8 秒 | 输入动作完成后回到锚点 |
-| `Preview` | 首页/角色卡片吸引点击 | 私密入口角色预览 | 8 秒 | 吸引动作完成后回到锚点 |
-| `Complex Action` | — | 私密房间多段性行为视频（脱衣→就位→高潮→收尾） | 4 秒单段-80 秒四段 | 双路线：Wan 链式四段拼接（K1 同锚点首帧，K5 回休息态）或 H3 单段/逐段 |
+| `Idle` | 骚版服装下的微动作 | 未上线 | 4-15 秒（默认 8 秒） | 首尾一致 |
+| `Gift` | AR虚拟礼物，骚版服装反应 | 未上线 | 4-15 秒（默认 8 秒） | 特效消散后首尾一致 |
+| `Action` | 骚版简单动作按钮 | 未上线 | 4-15 秒（默认 8 秒） | 动作完成后回到锚点 |
+| `Typing` | 等待 AI 回复时的输入状态 | 未上线 | 4-15 秒（默认 5 或 8 秒） | 输入动作完成后回到锚点 |
+| `Preview` | 首页/角色卡片吸引点击 | 未上线 | 4-15 秒（默认 8 秒） | 吸引动作完成后回到锚点 |
+| `Complex Action` | — | 脱衣→性行为多段视频（从公屏骚版首帧出发，视频内脱衣） | 4 秒单段-80 秒四段 | 双路线：Wan 链式四段拼接（K1 同锚点首帧，K5 回休息态）或 H3 单段/逐段 |
 
 ## 前端消费逻辑
 
@@ -65,7 +65,7 @@ appendix/     经验笔记（生产实测积累）
 2. **H3 FL2VA**：每条视频都按首尾帧画布生成，Picture 1 对齐 0.00 秒，Picture 2 对齐目标时长结尾。
 3. **同图首尾**：当前批量生产使用同一张参考图作为首帧和尾帧，动作必须回到参考图姿态。
 4. **首帧先行**：生成视频前先按 `01_role/first_frame.md` 生产首帧/定妆照，并按 `01_role/first_frame_standard.md` 通过验收。
-5. **固定时长**：Idle / Gift / Action / Preview 固定 8 秒；Typing 使用 5 秒或 8 秒。敲键盘段只持续约 3-4 秒，避免 10 秒输入动作过长。
+5. **时长弹性**：Idle / Gift / Action / Preview 时长 4-15 秒（默认 8 秒）；Typing 时长 4-15 秒（默认 5 或 8 秒）。敲键盘段只持续约 3-4 秒。
 6. **首尾一致**：每条 prompt 必须写明首帧和尾帧回到同一参考图姿态。
 7. **固定机位**：镜头锁定写成正向构图锚定：lens focal length、subject size、background landmarks remain unchanged。
 8. **三段结构**：最终英文 prompt 使用 `integrated_multimodal_description`、`overall_soundscape`、`non_diegetic_music`。
@@ -133,14 +133,14 @@ generated/
 
 ## 生成检查
 
-- [ ] 是否先选择了 `public_live` 或 `private_live`？
+- [ ] 当前是否只生产 `public_live` 素材（骚版服装）？
 - [ ] 是否已按 `01_role/first_frame.md` 生产、并按 `01_role/first_frame_standard.md` 验收首帧？
 - [ ] 是否只生成 `Idle`、`Gift`、`Action`、`Typing`、`Preview`（H3 FL2VA）或 `Complex Action`（双路线）？
 - [ ] 如果是 Complex Action，是否按 `02_prompt/complex_action/SKILL.md` 选对路线（四段长视频走 Wan 链式；单段/多图参考走 H3），四段骨架脱衣→就位→高潮→收尾，K1 用已有锚点首帧？
 - [ ] 如果走批量生产，是否按 `03_video/h3_pipeline.md` 执行（先 dry-run、选卡、断点续跑、收割器 salvage、autopilot+pullback 回收）？
 - [ ] 如果是画布手工生成，是否按 `03_video/canvas_manual.md` 选对模式（直播 loop 用 FL2V/FL2VA）和首尾帧工作流？
 - [ ] 角色交付物是否齐：首帧三件套、各状态提示词、候选+筛选记录、上线资料？
-- [ ] Idle / Gift / Action / Preview 是否固定 8 秒，Typing 是否为 5 秒或 8 秒？
+- [ ] Idle / Gift / Action / Preview 是否 4-15 秒（默认 8 秒），Typing 是否 4-15 秒（默认 5 或 8 秒）？
 - [ ] 首帧和尾帧是否回到同一模式锚点？
 - [ ] Gift 特效是否完全消散？
 - [ ] Gift 如果有口播，是否只有一句短中文？

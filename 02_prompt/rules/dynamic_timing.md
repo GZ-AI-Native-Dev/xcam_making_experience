@@ -1,27 +1,21 @@
 # 动态时机与上下文逻辑
 
-当前 `spicycam-prompt-latest` 只服务 `public_live` 与 `private_live` 两种直播间模式，状态范围限定为 `Idle`、`Gift`、`Action`、`Typing`、`Preview`。
+当前 `spicycam-prompt-latest` 只服务 `public_live` 公屏直播间（骚版生产层），状态范围限定为 `Idle`、`Gift`、`Action`、`Typing`、`Preview`。`private_live` 为未来功能，未上线。
 
-## 固定时长
+## 时长
 
-当前版本时长：
+当前版本时长范围为 4-15 秒，默认 8 秒：
 
-- `Idle`: 8s
-- `Gift`: 8s
-- `Action`: 8s
-- `Typing`: 5s or 8s
-- `Preview`: 8s
+- `Idle`: 4-15s（默认 8s）
+- `Gift`: 4-15s（默认 8s）
+- `Action`: 4-15s（默认 8s）
+- `Typing`: 4-15s（默认 5 或 8s）
+- `Preview`: 4-15s（默认 8s）
 
-Idle / Gift / Action / Preview 必须写明：
-
-```text
-Duration: 8 seconds. First frame and last frame must match the same mode anchor pose, seamless loop.
-```
-
-Typing 必须写明：
+写 prompt 时把 8.00 替换为实际秒数即可，例如 5 秒填 5.00、10 秒填 10.00。首尾帧对齐说明保持格式：
 
 ```text
-Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 5.00-second or 8.00-second mark of the target video.
+Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the [N.00]-second mark of the target video.
 ```
 
 ## 首尾帧规则
@@ -56,7 +50,7 @@ Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Pi
 
 `Preview` 是首页/角色卡片吸引点击状态：
 
-- 8 秒首尾一致，静默。
+- 4-15 秒（默认 8 秒）首尾一致，静默。
 - 按人物底色做差异化：清冷、甜妹、轻熟、治愈、冷艳、运动感等不能用同一套表情。
 - 只用眼神、微笑、发丝整理、低位小手势和姿态微调建立吸引力。
 - 不写裸露、性行为、摸胸、亲吻镜头、字幕、UI、礼物特效或新道具。
@@ -66,15 +60,15 @@ Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Pi
 - 不说话，不生成字幕、评论 UI 或屏幕文字。
 - 优先使用“画面外键盘打字声”：人物看向镜头下方，自己向前一小步，手指在画面下方附近做小幅打字动作，键盘始终在画面外。
 - 也可使用“侧边递远峰蓝 iPhone 13 Pro”：只出现一只手和手机，人物低位接过、轻点、还回去。
-- Typing 总时长为 5 秒或 8 秒；如果是敲键盘，实际敲击动作只持续约 3-4 秒。
+- Typing 总时长 4-15 秒（默认 5 或 8 秒）；如果是敲键盘，实际敲击动作只持续约 3-4 秒。
 - 声音只写画面外键盘声或轻微触屏声，不写环境声、音乐和人声。
 - 结尾回到当前模式 anchor，人物大小和背景构图一致。
 
 ## 写作前检查
 
-- [ ] 是否是 `public_live` 或 `private_live`？
+- [ ] 当前是否只生产 `public_live` 素材？
 - [ ] 是否只生成 `Idle`、`Gift`、单段 `Action`、`Typing` 或 `Preview`？
-- [ ] Idle / Gift / Action / Preview 是否固定 8 秒，Typing 是否为 5 秒或 8 秒？
+- [ ] Idle / Gift / Action / Preview 是否 4-15 秒（默认 8 秒），Typing 是否 4-15 秒（默认 5 或 8 秒）？
 - [ ] 首尾帧是否一致并回到同一模式 anchor？
 - [ ] 是否符合 `first_frame_standard.md` 的真实高清直播首帧标准？
 - [ ] Idle / Action 是否没有说话、台词、字幕、环境声和凭空新增道具？

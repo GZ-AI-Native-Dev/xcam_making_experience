@@ -13,7 +13,7 @@
 中文：真实手机直播画面，一位成年东亚女性[角色]，[发型描述]
 正面坐在/站在[具体直播位置]，身体正对镜头，脸完全正对镜头，双眼直视镜头
 镜头高度与眼睛完全平齐，平视视角
-穿着[日常/职业相关服装]，整体符合[角色气质]
+穿着[骚版服装：蕾丝内衣/透丝袜/性感运动装等]，整体符合[角色气质]
 双手自然放在[膝盖/桌面/核心道具旁]，姿态放松自然
 背景是明亮、整洁、真实的[场景]，包含[3-5个清晰背景元素]
 人物和背景同样清晰，深景深，不做背景虚化
@@ -23,7 +23,7 @@
 ```
 English: An adult [role] with [hair description and natural appearance]
 Sitting or standing front-facing at [real livestream location], with [3-5 clear background elements] visible
-Wearing everyday or profession-appropriate clothing for public livestream
+Wearing the production-layer outfit (lace lingerie, sheer stockings, athletic wear, etc.)
 Hands resting naturally in the same visible position as the reference image
 Body and face fully facing the camera, eyes looking directly into the camera
 Camera at exact eye level, straight-on view, no high angle, no low angle, no side angle
@@ -32,29 +32,10 @@ The person and background are equally sharp; no cinematic blur, no portrait mode
 Vertical 9:16, centered composition, visible from head to knees
 ```
 
-## Private Live 锚点模板
+## Private Live 锚点（未上线）
 
-```
-中文：真实手机直播画面，一位成年东亚女性[角色]，[发型描述]
-位于单独的私密直播空间，使用与 public_live 不同的 private_anchor
-身体正对镜头，脸完全正对镜头，双眼直视镜头；镜头高度与眼睛完全平齐
-服装状态、灯光和坐姿按 private_live 单独设定，不复用公屏锚点
-双手自然放在[膝盖/桌面/身体前方稳定位置]，姿态稳定、低幅度
-背景是整洁、真实、私密的室内空间，包含[3-5个清晰背景元素]
-人物和背景同样清晰，深景深，不做背景虚化
-竖版9:16，人物居中，从头到膝盖完整可见
-```
-
-```
-English: An adult [role] with [hair description and natural appearance]
-In a separate private livestream room, using a private_anchor distinct from public_live
-Body and face fully facing the camera, eyes looking directly into the camera
-Camera at exact eye level, straight-on view, no high angle, no low angle, no side angle
-Private mode clothing state, lighting, and pose are defined separately from the public anchor
-Hands resting naturally in a stable low-amplitude position
-Clean realistic private indoor background with [3-5 clear background elements]
-The person and background are equally sharp; no cinematic blur, no portrait mode
-Vertical 9:16, centered composition, visible from head to knees
-```
+> 私屏为未来功能，尚未进入生产。以下为设计概念，暂不出素材。
+>
+> 设计概念：用户在公屏点击角色 private → 角色直接脱衣切换到私密服装状态。上线时需另行设计脱衣过渡动画和私密状态锚点，不复用公屏锚点。
 
 **关键：** 所有视频的首帧/尾帧都必须接近同一模式锚点姿态，否则切换会跳帧。角色和场景先参照 `role_system.md` 与 `first_frame_standard.md` 定义，避免所有锚点都变成同一张床和同一类人物。

@@ -13,7 +13,7 @@ description: >
 
 ## 核心规则
 
-1. 每条 Gift 都是一个 8 秒单镜头 FL2VA loop。
+1. 每条 Gift 是一个 4-15 秒单镜头 FL2VA loop（默认 8 秒）。
 2. 第一行必须写 H3 首尾帧对齐说明。
 3. 正文必须使用三段结构：`integrated_multimodal_description`、`overall_soundscape`、`non_diegetic_music`。
 4. 礼物只能是直播平台虚拟 AR overlay、粒子、贴纸、平台礼物动画；不能是实体礼物。
