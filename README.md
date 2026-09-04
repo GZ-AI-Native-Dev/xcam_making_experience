@@ -93,8 +93,8 @@
 ## ✦ 参考资料
 
 - MiniMax H3 官方仓库：<https://github.com/MiniMax-AI/MiniMax-H3>
-- 画布平台 / 生图工作台：`ic.xcamshow.xyz`
-- 角色预览站（上线字段参考）：`https://xcamshow.xyz/interactive`
+- 画布平台 / 生图工作台：<https://ic.xcamshow.xyz>
+- 角色预览站（上线字段参考）：<https://xcamshow.xyz/interactive>
 
 ## ✦ 版本记录
 
