@@ -120,6 +120,53 @@ non_diegetic_music: N/A
 - ComfyUI `/history`、`/queue` 需 cookie-jar 登录（`-c -b` 同一 jar）；裸 curl 或过期 cookie 会返回登录页 HTML，收割器必须检测"非 JSON → 重新 login → 重试"。
 - 同 prompt 有概率波动，候选之间差异主要来自采样，不来自 prompt 微调。
 
+## 完整示例
+
+以下三条均为批量生产验证通过的完整 prompt，覆盖不同锚点族和人设类型。直接照结构替换角色描述和动作句即可。
+
+### 示例 1 · waveHello（A 族跪坐 · 御姐型）
+
+> 锚点：黑蕾丝内衣 + 黑透丝袜，跪坐深灰地垫，双手搭大腿，身后木质书架。
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with long black hair over her shoulders, in a black lace bra and sheer black thigh-high stockings, kneeling on the dark gray floor mat before the wooden bookshelf, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. She lifts one hand in a slow lazy wave kept at chest height, fingers loose and curling, head tilting to one side as her eyes narrow into a warm half-lidded smile; the wave lingers, she gives one last small curl of the fingers like a hook, bites her lower lip for a beat, then lowers the hand back to her thigh. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: Low room tone with the soft rustle of sheer stockings against themselves and one quiet breathy exhale.
+
+non_diegetic_music: N/A
+```
+
+### 示例 2 · breastSqueeze（E 族前倾双手托胸 · 文艺型）
+
+> 锚点：酒红蕾丝内衣，高马尾深栗发，坐墨绿丝绒单人沙发身体前倾，双手从下方托着胸口。
+> 注意：结尾必须回到"双手托胸位"。
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with dark auburn hair pulled into a high ponytail and wispy strands framing her flushed face, in a wine-red lace bra with nipples pressing against the lace and matching lace panties, seated leaning forward on the green velvet wingback armchair with both hands cupped under her breasts, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. From the cupped position her hands press inward and lift hard, squeezing the breasts together so the flesh bulges over her fingers and the cleavage deepens, shoulders drawing in, head tipping back a fraction with eyes closing and a soft moan escaping; she opens her eyes heavy-lidded at the camera, releases the squeeze letting the breasts bounce once, and the hands relax back into the cupped hold. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: A soft moan, lace and skin compressing under her palms, one shaky exhale, low room tone.
+
+non_diegetic_music: N/A
+```
+
+### 示例 3 · catTease（G 族瑜伽坐 · 运动型）
+
+> 锚点：灰色运动T + 酒红瑜伽裤，高马尾，瑜伽垫上 90/90 拉伸坐姿，右手搭右膝左手撑侧。
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with black hair in a high ponytail, in a grey athletic t-shirt with nipples pressing the fabric and wine-red leggings, seated on the white yoga mat in a 90/90 stretch with the right leg bent in front, the left leg extended to the side, the right hand resting on the right knee and the left hand braced on the mat, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. Keeping her hands placed she arches her back in a deep stretch, chest thrusting up so the breasts lift and the nipples strain the t-shirt, shoulders rolling back, chin rising, hips rolling slow in the stretch grinding the pelvis, eyes closing with a long shaky exhale sliding into a moan; she rounds back and settles with heavy lids and a grin. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: A shaky exhale into a soft moan, leggings stretching on the mat, low room tone.
+
+non_diegetic_music: N/A
+```
+
 ## 检查清单
 
 - [ ] 是否 8 秒 H3 FL2VA，Picture 1 和 Picture 2 同图？

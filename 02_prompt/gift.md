@@ -93,6 +93,58 @@ non_diegetic_music: N/A
 - 不要写 `comments`、`app interface`、`screen overlay text`，容易生成奇怪 UI 或字幕。
 - 礼物效果要“出现-发光/粒子-消散”，不能变成实体，也不能留到尾帧。
 
+## 完整示例
+
+以下四条均为批量生产验证通过的完整 Gift prompt，AR overlay 格式，覆盖不同礼物类型和反应风格。
+
+### 示例 1 · 玫瑰花（AR overlay · 御姐型 · 闻花反应）
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with long black hair over her shoulders, in a black lace bra and sheer black thigh-high stockings, kneeling on the dark gray floor mat before the wooden bookshelf, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. A livestream virtual rose gift appears as a platform AR overlay, a cluster of glowing red roses blooming open at the outer frame edge beside her, never becoming physical objects and never covering her face, hands, or body. She leans her head slightly toward the blooms, eyes closing for one slow pretend inhale, then opens them half-lidded at the camera with a small satisfied smile. The adult fictional woman (S1), with a young adult East Asian female voice, says one short Chinese line: <d>[Chinese] 谢谢你的玫瑰。</d> Her lips move naturally only for this single line, then close. The AR roses dissolve completely before the final frame. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: The only intended vocal event is her single short Chinese thank-you line. No added room ambience, no gift sound effect, and no other voices are intended.
+
+non_diegetic_music: N/A
+```
+
+### 示例 2 · 棒棒糖（AR overlay · 御姐型 · 舔嘴反应）
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with long black hair over her shoulders, in a black lace bra and sheer black thigh-high stockings, kneeling on the dark gray floor mat before the wooden bookshelf, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. A livestream virtual lollipop gift appears as a small platform AR prop at her right hand, a glossy round candy on a stick glowing softly; she lifts it, brings it to her mouth, and draws one slow deliberate lick along the edge with half-lidded eyes held on the camera, then parts her lips around it for a brief suck before lowering the hand, the candy dissolving into soft particles. The adult fictional woman (S1), with a young adult East Asian female voice, says one short Chinese line: <d>[Chinese] 谢谢老公的糖。</d> Her lips move naturally only for this single line, then close. The AR lollipop dissolves completely before the final frame. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: The only intended vocal event is her single short Chinese thank-you line. No added room ambience, no gift sound effect, and no other voices are intended.
+
+non_diegetic_music: N/A
+```
+
+### 示例 3 · 飞吻卡片（AR overlay · 御姐型 · 回飞吻反应）
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with long black hair over her shoulders, in a black lace bra and sheer black thigh-high stockings, kneeling on the dark gray floor mat before the wooden bookshelf, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. A livestream virtual kiss-card gift appears as a platform AR overlay, a small glowing card with a lipstick kiss mark floating at the outer frame side, never becoming a physical object and never covering her face, hands, or body. She watches it, presses one hand flat over her heart as if catching the kiss, then extends the same hand forward at chest height to send a kiss back with a slow flick of the wrist, half-lidded. The adult fictional woman (S1), with a young adult East Asian female voice, says one short Chinese line: <d>[Chinese] 谢谢老公，爱你哟。</d> Her lips move naturally only for this single line, then close. The AR card dissolves completely before the final frame. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: The only intended vocal event is her single short Chinese thank-you line. No added room ambience, no gift sound effect, and no other voices are intended.
+
+non_diegetic_music: N/A
+```
+
+### 示例 4 · 香槟（AR overlay · 御姐型 · 举杯反应）
+
+```text
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, authentic phone livestream realism, a single vertical front-facing static shot. The adult fictional woman with long black hair over her shoulders, in a black lace bra and sheer black thigh-high stockings, kneeling on the dark gray floor mat before the wooden bookshelf, begins in the exact pose and framing established by Picture 1. The camera holds a static shot for the full 8 seconds, preserving the same lens focal length, full-body subject size, head position, body position, hand position, stable background landmarks, lighting, outfit, hairstyle, and background layout. A livestream virtual champagne gift appears as a platform AR overlay, a glowing bottle at the outer frame edge popping with a spray of golden sparkle particles that drift and fade, never becoming a physical object and never covering her face, hands, or body. She lifts one hand in a small elegant toast gesture toward the camera, chin raised a fraction, eyes bright and half-lidded, holding the toast a beat before lowering the hand back to her thigh. The adult fictional woman (S1), with a young adult East Asian female voice, says one short Chinese line: <d>[Chinese] 谢谢老板的香槟。</d> Her lips move naturally only for this single line, then close. The AR bottle and sparkles dissolve completely before the final frame. She returns to the exact pose, gaze, expression, hand position, subject size, and framing established by Picture 2 at the end of the shot.
+
+overall_soundscape: The only intended vocal event is her single short Chinese thank-you line. No added room ambience, no gift sound effect, and no other voices are intended.
+
+non_diegetic_music: N/A
+```
+
 ## 检查清单
 
 - [ ] 是否是 8 秒 H3 FL2VA，Picture 1 和 Picture 2 同图？
